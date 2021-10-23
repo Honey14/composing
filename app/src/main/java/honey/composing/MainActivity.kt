@@ -2,6 +2,7 @@ package honey.composing
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -14,10 +15,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import honey.composing.ui.theme.ComposingTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            ComposingTheme {
+                ListOfMenuItems(foodItems = MenuCard.listOfFoodItems)
+            }
+        }
     }
 }
 
@@ -26,7 +33,9 @@ data class FoodItems(val resourceId: Int, val foodName: String)
 @Preview
 @Composable
 fun PreviewListOfFood() {
-    ListOfMenuItems(foodItems = MenuCard.listOfFoodItems)
+    ComposingTheme {
+        ListOfMenuItems(foodItems = MenuCard.listOfFoodItems)
+    }
 }
 
 @Composable
