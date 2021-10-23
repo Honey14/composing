@@ -24,16 +24,16 @@ class MainActivity : ComponentActivity() {
 data class FoodItems(val resourceId: Int, val foodName: String)
 
 @Composable
-private fun foodItem() {
+private fun Menu(foodItem: FoodItems) {
     Row(modifier = Modifier.padding(all = 6.dp)) {
         Image(
-            painter = painterResource(R.drawable.eggsand),
+            painter = painterResource(foodItem.resourceId),
             contentDescription = "Egg Sandwich",
             modifier = Modifier
                 .size(36.dp)
                 .clip(CircleShape)
         )
-        Text(text = "Egg sandwich")
+        Text(text = foodItem.foodName)
         Spacer(modifier = Modifier.width(8.dp))
     }
 }
