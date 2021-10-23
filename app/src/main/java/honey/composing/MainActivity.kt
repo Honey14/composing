@@ -18,6 +18,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 private fun foodItems() {
     Text(text = "Egg sandwich")
