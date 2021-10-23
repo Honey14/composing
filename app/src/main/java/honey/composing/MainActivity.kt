@@ -26,7 +26,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview
+data class FoodItems(val resourceId: Int, val foodName: String)
+
 @Composable
 private fun foodItem() {
     Row(modifier = Modifier.padding(all = 6.dp)) {
