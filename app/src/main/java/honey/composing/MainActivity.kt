@@ -38,5 +38,6 @@ private fun foodItem() {
                 .clip(CircleShape)
         )
         Text(text = "Egg sandwich")
+        Spacer(modifier = Modifier.width(8.dp))
     }
 }
