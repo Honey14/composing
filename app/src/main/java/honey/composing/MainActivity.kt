@@ -17,3 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
     }
 }
+
+@Composable
+private fun foodItems() {
+    Text(text = "Egg sandwich")
+}
