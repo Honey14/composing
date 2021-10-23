@@ -23,6 +23,12 @@ class MainActivity : ComponentActivity() {
 
 data class FoodItems(val resourceId: Int, val foodName: String)
 
+@Preview
+@Composable
+fun PreviewListOfFood() {
+    ListOfMenuItems(foodItems = MenuCard.listOfFoodItems)
+}
+
 @Composable
 private fun Menu(foodItem: FoodItems) {
     Row(modifier = Modifier.padding(all = 6.dp)) {
