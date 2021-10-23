@@ -8,12 +8,14 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import honey.composing.ui.theme.ComposingTheme
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +26,7 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 private fun foodItem() {
-    Row {
+    Row(modifier = Modifier.padding(all = 6.dp)) {
         Image(
             painter = painterResource(R.drawable.eggsand),
             contentDescription = "Egg Sandwich"
